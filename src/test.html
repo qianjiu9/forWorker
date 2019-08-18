@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test1</title>
+	<style type="text/css">
+		.root {
+			width: 100%;
+			height: 600px;
+			position: relative;
+			background-color: lightblue;
+		}
+
+		.left{
+			width: 400px;
+			height: 400px;
+			background-color: pink;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+
+		.right{
+			width: 0;
+			border-top: 100px solid #000;
+			border-right: transparent 50px solid;
+			border-left: transparent 50px solid;
+		}
+
+		.flexTest {
+			width: 100%;
+			height: 300px;
+			background: #f6f6f6;
+			display: flex;
+		}
+		.child {
+			width: 300px;
+			height: 100%;
+			margin: 20px;
+			background: #000;
+		}
+
+		.flexright {
+			align-self: flex-end;
+			width: 200px;
+			height: 200px;
+			background: #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="root">
+		<div class="left">left</div>
+		<div class="right">right</div>
+		<div class="flexTest">
+			<div class="child"></div>
+			<div class="child"></div>
+			<div class="flexright"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function sort(arr) {
+			const len = arr.length;
+			let temp;
+			for(let i=0;i<len;i++)
+				for(let j=0;j<len-i-1;j++){
+					if(arr[j]>arr[j+1]){
+						temp=arr[j];
+						arr[j] = arr[j+1];
+						arr[j+1] = temp;
+					}
+				}
+
+			return arr;
+		}
+
+		console.log(sort([1,32,14,33,65,6]));
+	</script>
+</body>
+</html>
